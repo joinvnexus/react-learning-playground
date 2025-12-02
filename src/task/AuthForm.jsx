@@ -1,7 +1,9 @@
 // src/AuthForm.js
 import { useState } from "react";
 import "./AuthForm.css";
+import { useAuth } from "../context/AuthContext";
 const AuthForm = () => {
+    const { login } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
 
   const [formData, setFormData] = useState({
@@ -46,6 +48,7 @@ const AuthForm = () => {
     e.preventDefault();
     if (validate()) {
       if (isLogin) {
+        login({ name: "Projoy Naidu", email: formData.email });
         alert("Login successful! Welcome to the dashboard");
         console.log("Login:", { email: formData.email });
       } else {
