@@ -11,6 +11,7 @@ import TodoApp from "./task/TodoApp";
 import Todo from './task/todo'
 import UserList from './task/UserList'
 import JokesApp from "./task/JokesApp";
+import  AuthForm from "./task/AuthForm";
 
 function App() {
   const name = "rakib";
@@ -92,6 +93,7 @@ function App() {
        <Todo />
        <UserList />
        <JokesApp />
+       <AuthForm />
     </div>
   );
 }
