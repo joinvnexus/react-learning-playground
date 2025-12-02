@@ -10,6 +10,7 @@ import CountState from "./task/count-state";
 import TodoApp from "./task/TodoApp";
 import Todo from './task/todo'
 import UserList from './task/UserList'
+import JokesApp from "./task/JokesApp";
 
 function App() {
   const name = "rakib";
@@ -90,6 +91,7 @@ function App() {
        <TodoApp />
        <Todo />
        <UserList />
+       <JokesApp />
     </div>
   );
 }
