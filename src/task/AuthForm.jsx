@@ -3,19 +3,20 @@ import { useState } from "react";
 import "./AuthForm.css";
 import { useAuth } from "../context/AuthContext";
 const AuthForm = () => {
-    const { login } = useAuth();
+  const { login } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
+    if (!e.target) return;
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
@@ -28,16 +29,16 @@ const AuthForm = () => {
   const validate = () => {
     let temp = {};
 
-    if (!isLogin && !formData.name.trim()) 
+    if (!isLogin && !formData.name.trim())
       temp.name = "You must write the name.";
 
-    if (!formData.email.includes("@") || !formData.email.includes(".")) 
+    if (!formData.email.includes("@") || !formData.email.includes("."))
       temp.email = "Please enter the correct email.";
 
-    if (formData.password.length < 6) 
+    if (formData.password.length < 6)
       temp.password = "Password must be at least 6 characters long.";
 
-    if (!isLogin && formData.password !== formData.confirmPassword) 
+    if (!isLogin && formData.password !== formData.confirmPassword)
       temp.confirmPassword = "Password does not match!";
 
     setErrors(temp);
@@ -45,19 +46,24 @@ const AuthForm = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      if (isLogin) {
-        login({ name: "Projoy Naidu", email: formData.email });
-        alert("Login successful! Welcome to the dashboard");
-        console.log("Login:", { email: formData.email });
-      } else {
-        alert(`Welcome ${formData.name}! Account created`);
-        console.log("Registered:", formData);
-      }
+    try {
+      e.preventDefault();
+      
+      if (validate()) {
+        if (isLogin) {
+          login({ name: formData.name, email: formData.email });
+          alert("Login successful! Welcome to the dashboard");
+          console.log("Login:", { name: formData.name, email: formData.email });
+        } else {
+          alert(`Welcome ${formData.name}! Account created`);
+          console.log("Registered:", formData);
+        }
 
-      // ফর্ম খালি করা
-      setFormData({ name: "", email: "", password: "", confirmPassword: "" });
+        // ফর্ম খালি করা
+        setFormData({ name: "", email: "", password: "", confirmPassword: "" });
+      }
+    } catch (error) {
+      console.error("Error in form submission:", error);
     }
   };
 
@@ -67,8 +73,7 @@ const AuthForm = () => {
         <h1>{isLogin ? "Login" : "Register"}</h1>
 
         <form onSubmit={handleSubmit}>
-
-          {/* শুধু রেজিস্টারে নাম */}
+          {/* শুধু রেলিস্টারে নাম */}
           {!isLogin && (
             <div className="input-group">
               <input
@@ -101,10 +106,12 @@ const AuthForm = () => {
               value={formData.password}
               onChange={handleChange}
             />
-            {errors.password && <span className="error">{errors.password}</span>}
+            {errors.password && (
+              <span className="error">{errors.password}</span>
+            )}
           </div>
 
-          {/* শুধু রেজিস্টারে কনফার্ম পাসওয়ার্ড */}
+          {/* শুধু রেলিস্টারে নাম */}
           {!isLogin && (
             <div className="input-group">
               <input
@@ -114,7 +121,9 @@ const AuthForm = () => {
                 value={formData.confirmPassword}
                 onChange={handleChange}
               />
-              {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
+              {errors.confirmPassword && (
+                <span className="error">{errors.confirmPassword}</span>
+              )}
             </div>
           )}
 
