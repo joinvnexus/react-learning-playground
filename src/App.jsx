@@ -9,8 +9,8 @@ import Profile from "./pages/Profile";     // প্রোটেক্টেড
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 // import ComplexCounter from './task/ComplexCounter'
-import CountReduce from "./task/countreduce";
-
+// import CountReduce from "./task/countreduce";
+import FormReducer from "./task/FormReducer";
 function App() {
   return (
     <AuthProvider>
@@ -45,7 +45,8 @@ function App() {
         </div>
         {/* <ComplexCounter /> */}
       </Router>
-      <CountReduce/>
+      {/* <CountReduce/> */}
+      <FormReducer/>
     </AuthProvider>
 
   );
