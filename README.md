@@ -9,7 +9,7 @@ Lightweight React practice project built with Vite. This repository contains a c
 - **Linting:** ESLint with React hooks plugin
 - **Purpose:** Learning / experimentation — not production-ready
 
-## Getting Started
+## Getting Started 
 
 Prerequisites: Node.js (16+ recommended) and npm (or yarn).
 
