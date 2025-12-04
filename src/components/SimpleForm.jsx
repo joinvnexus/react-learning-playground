@@ -14,7 +14,7 @@ function SimpleForm() {
   };
   return (
     <div className="form-container">
-      <h2 className="form-title">Custom Hook দিয়ে ফর্ম</h2>
+      <h2 className="form-title">Custom Hook Form</h2>
       <form onSubmit={handleSubmit}>
         <input
           name="name"

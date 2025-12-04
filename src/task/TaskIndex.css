@@ -1,0 +1,58 @@
+/* Container */
+.task-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 32px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Titles */
+.task-title {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.task-subtitle {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Grid Layout */
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* Link Style */
+.task-link {
+  display: block;
+  padding: 12px 16px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  border: 1px solid #ddd;
+  transition: 0.25s ease;
+}
+
+/* Hover */
+.task-link:hover {
+  background: #4e7fff;
+  color: white;
+  border-color: #4e7fff;
+  transform: translateY(-3px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .task-link {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
