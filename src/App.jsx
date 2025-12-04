@@ -18,10 +18,10 @@ import Friend from "./task/friend";
 import FriendCard from "./task/FriendCard";
 import FruitTable from "./task/FruitTable";
 import JokesApp from "./task/JokesApp";
-import ProductCard from "./task/products";
+import Products from "./task/products";
 import ProfileCard from "./task/ProfileCard";
 import Task1 from "./task/task-1";
-import Todo from "./task/Todo";
+import Todo from "./task/todo";
 import TodoApp from "./task/TodoApp";
 import UserList from "./task/UserList";
 import Footer from "./task/Footer";
@@ -45,14 +45,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
 
-            <Route
-              path="/tasks"
-              element={
-                <ProtectedRoute>
-                  <TaskIndex />
-                </ProtectedRoute>
-              }
-            />
+            
             {/* প্রোটেক্টেড রুট */}
             <Route
               path="/dashboard"
@@ -83,7 +76,7 @@ function App() {
             <Route path="/tasks/friend-card" element={<FriendCard />} />
             <Route path="/tasks/fruit-table" element={<FruitTable />} />
             <Route path="/tasks/jokes" element={<JokesApp />} />
-            <Route path="/tasks/product-card" element={<ProductCard />} />
+            <Route path="/tasks/product-card" element={<Products />} />
             <Route path="/tasks/profile-card" element={<ProfileCard />} />
             <Route path="/tasks/task-1" element={<Task1 />} />
             <Route path="/tasks/todo" element={<Todo />} />
