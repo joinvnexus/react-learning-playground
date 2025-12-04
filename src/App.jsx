@@ -8,6 +8,8 @@ import Dashboard from "./components/Dashboard"; // প্রোটেক্ট�
 import Profile from "./pages/Profile";     // প্রোটেক্টেড
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
+// import ComplexCounter from './task/ComplexCounter'
+import CountReduce from "./task/countreduce";
 
 function App() {
   return (
@@ -41,8 +43,11 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
+        {/* <ComplexCounter /> */}
       </Router>
+      <CountReduce/>
     </AuthProvider>
+
   );
 }
 
