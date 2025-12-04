@@ -9,13 +9,13 @@ export default function TaskIndex() {
 
       <div className="task-grid">
         <Link to="/tasks/profile-card" className="task-link">ProfileCard</Link>
-        <Link to="/friend-card" className="task-link">FriendCard</Link>
+        <Link to="/friend" className="task-link">FriendCard</Link>
         <Link to="/tasks/fruit-table" className="task-link">FruitTable</Link>
         <Link to="/tasks/jokes" className="task-link">JokesApp</Link>
         <Link to="/tasks/product-card" className="task-link">ProductCard</Link>
         <Link to="/tasks/task-1" className="task-link">Task1</Link>
-        <Link to="/tasks/todo" className="task-link">Todo</Link>
-        <Link to="/tasks/todo-app" className="task-link">TodoApp</Link>
+        <Link to="/tasks/todo" className="task-link">TodoApp</Link>
+        <Link to="/tasks/todo-app" className="task-link">Todo</Link>
         <Link to="/tasks/user-list" className="task-link">UserList</Link>
         <Link to="/tasks/footer" className="task-link">Footer</Link>
         <Link to="/tasks/complex-counter" className="task-link">ComplexCounter</Link>

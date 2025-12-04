@@ -1,0 +1,46 @@
+/* General button */
+.container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.increment {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: green;
+}
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: blue;
+}
+
+/* Toggle Circle */
+.toggle-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 20px auto;
+}
+
+/* Input field */
+.text-input {
+  padding: 12px;
+  font-size: 18px;
+  width: 300px;
+}
+
+/* Like button */
+.like-btn {
+  font-size: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function ProductCard({ productName, price, discount, image }) {
   // discount price calculation
 let discountAmount = (price * discount) / 100;

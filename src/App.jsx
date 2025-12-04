@@ -18,7 +18,7 @@ import Friend from "./task/friend";
 import FriendCard from "./task/FriendCard";
 import FruitTable from "./task/FruitTable";
 import JokesApp from "./task/JokesApp";
-import ProductCard from "./task/ProductCard";
+import ProductCard from "./task/products";
 import ProfileCard from "./task/ProfileCard";
 import Task1 from "./task/task-1";
 import Todo from "./task/Todo";

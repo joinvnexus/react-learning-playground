@@ -2,55 +2,58 @@ import React, { useState } from "react";
 
 const TodoApp = () => {
   const [inputValue, setInputValue] = useState("");
-
   const [todos, setTodos] = useState([]);
 
   const handleTodo = () => {
-    // console.log("todo added");
-    setTodos([...todos, inputValue]);
+    if (inputValue.trim() === "") return; // prevent empty todo
+    setTodos([...todos, { id: Date.now(), text: inputValue }]);
     setInputValue("");
   };
 
   const handleTodoInput = (e) => {
-    // console.log("todo input");
     setInputValue(e.target.value);
   };
 
   return (
-    <div>
+    <div style={{ padding: "30px", maxWidth: "500px", margin: "auto" }}>
       <h1>Todo List</h1>
 
       <input
         type="text"
-        placeholder="Add todo "
+        placeholder="Add todo..."
         onChange={handleTodoInput}
-        style={{
-          border: "none 2px solid #2196f3",
-          padding: "20px",
-          borderRadius: "10px",
-          backgroundColor: "#e3f2fd",
-          borderWidth: "2px",
-          borderColor: "#2196f3",
-        }}
         value={inputValue}
+        style={{
+          padding: "15px",
+          borderRadius: "10px",
+          border: "2px solid #2196f3",
+          backgroundColor: "#e3f2fd",
+          width: "70%",
+          marginRight: "10px",
+          fontSize: "18px",
+        }}
       />
 
       <button
         onClick={handleTodo}
         style={{
-          border: "none",
-          padding: "20px",
+          padding: "15px 25px",
           backgroundColor: "blue",
           color: "white",
+          border: "none",
           cursor: "pointer",
+          borderRadius: "10px",
+          fontSize: "18px",
         }}
       >
         ADD TODO
       </button>
 
-      <ul>
+      <ul style={{ marginTop: "20px", fontSize: "20px" }}>
         {todos.map((todo) => (
-          <li>{todo}</li>
+          <li key={todo.id} style={{ marginBottom: "10px" }}>
+            {todo.text}
+          </li>
         ))}
       </ul>
     </div>

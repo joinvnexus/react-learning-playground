@@ -12,7 +12,7 @@ function Login() {
   }
 
   return (
-    <div style={{ padding: "40px", maxWidth: "500px", margin: "0 auto" }}>
+    <div >
       <AuthForm />
     </div>
   );

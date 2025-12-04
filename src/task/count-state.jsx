@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./CountState.css";
 const btnStyle = {
   padding: "10px 20px",
   margin: "10px",
@@ -50,64 +50,60 @@ const CountState = () => {
   };
   return (
     <>
-      <h1>{count}</h1>
-      <button onClick={handleClick}>increment</button>
-
-      {/* text change */}
-
-      {/* button change name  */}
-      <h2>হ্যালো {name}!</h2>
-      <button onClick={() => setName("Saju")} style={btnStyle}>
-        নাম দেখাও
-      </button>
-      <button onClick={() => setName("বন্ধু")} style={btnStyle}>
-        বন্ধু বলো
-      </button>
-
-      {/* toogle btn */}
-      <br />
-      <div style={{ margin: "30px" }}>
-        <h2>Light {isON ? "ON " : "OFF"}</h2>
-        <div
-          style={{
-            width: "150px",
-            height: "150px",
-            background: isON ? "yellow" : "gray",
-            borderRadius: "50%",
-            margin: "20px auto",
-            boxShadow: isON ? "0 0 60px yellow" : "none",
-          }}
-        ></div>
-        <button onClick={handleToogle}>{isON ? "ON" : "OFF"}</button>
-      </div>
-
-      {/* input text */}
-
-      <div style={{ margin: "30px" }}>
-        <h2> You Write :{inputValue}</h2>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleInput}
-          style={{ padding: "12px", fontSize: "18px", width: "300px" }}
-          placeholder="enter your text"
-        />
-      </div>
-
-      {/* like button */}
-      <div style={{ margin: "30px" }}>
-        <h2>এই পোস্টে লাইক: {likes}</h2>
-        <button
-          onClick={handleLikes}
-          style={{
-            fontSize: "40px",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          {isLiked ? "❤️" : "♡"}
+      <div className="container">
+        {/* count */}
+        <h1 style={{ color: "red" }}>{count}</h1>
+        <button className="increment" onClick={handleClick}>
+          increment
         </button>
+
+        {/* text change */}
+
+        {/* button change name  */}
+        <h2>হ্যালো {name}!</h2>
+        <button onClick={() => setName("Saju")} className="btn">
+          নাম দেখাও
+        </button>
+        <button onClick={() => setName("বন্ধু")} style={btnStyle}>
+          বন্ধু বলো
+        </button>
+
+        {/* toogle btn */}
+        <br />
+        <div style={{ margin: "30px" }}>
+          <h2>Light {isON ? "ON " : "OFF"}</h2>
+          <div
+            className="toggle-circle"
+            style={{
+              background: isON ? "yellow" : "gray",
+              boxShadow: isON ? "0 0 60px yellow" : "none",
+            }}
+          ></div>
+          <button className="btn" onClick={handleToogle}>
+            {isON ? "ON" : "OFF"}
+          </button>
+        </div>
+
+        {/* input text */}
+
+        <div style={{ margin: "30px" }}>
+          <h2> You Write :{inputValue}</h2>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInput}
+            className="text-input"
+            placeholder="enter your text"
+          />
+        </div>
+
+        {/* like button */}
+        <div style={{ margin: "30px" }}>
+          <h2>এই পোস্টে লাইক: {likes}</h2>
+          <button onClick={handleLikes} className="like-btn">
+            {isLiked ? "❤️" : "♡"}
+          </button>
+        </div>
       </div>
     </>
   );
