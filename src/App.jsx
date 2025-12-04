@@ -10,7 +10,11 @@ import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 // import ComplexCounter from './task/ComplexCounter'
 // import CountReduce from "./task/countreduce";
-import FormReducer from "./task/FormReducer";
+//import FormReducer from "./task/FormReducer";
+//import SimpleForm from "./components/SimpleForm";
+//import Users from "./components/Users";
+
+
 function App() {
   return (
     <AuthProvider>
@@ -46,7 +50,9 @@ function App() {
         {/* <ComplexCounter /> */}
       </Router>
       {/* <CountReduce/> */}
-      <FormReducer/>
+      {/* <FormReducer/> */}
+      {/* <SimpleForm/> */}
+      {/* <Users/> */}
     </AuthProvider>
 
   );

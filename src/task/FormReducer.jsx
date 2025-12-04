@@ -16,7 +16,7 @@ const reducer = (state, action) => {
     case "SET_FIELD":
       return {
         ...state,
-        [action.field]: action.payload,
+        [action.field]: action.payload, //
         errors: { ...state.errors, [action.field]: "" }, // clear error when typing
       };
 
