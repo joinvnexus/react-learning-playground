@@ -1,5 +1,5 @@
 // src/pages/Dashboard.js
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
 import { Link } from "react-router-dom";
 
 function Dashboard() {

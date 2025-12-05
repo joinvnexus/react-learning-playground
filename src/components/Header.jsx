@@ -1,5 +1,5 @@
 // src/components/Header.js
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../hooks/useAuth';
 
 function Header() {
   const { user, logout } = useAuth();

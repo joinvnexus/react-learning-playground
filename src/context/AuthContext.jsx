@@ -1,10 +1,10 @@
 // src/context/AuthContext.js
-import { createContext, useState, useContext } from "react";
+import { createContext, useState } from "react";
 
 // Create the AuthContext
 const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
+ function AuthProvider({ children }) {
   const [user, setUser] = useState(null); // null = লগইন নেই
 
   const login = (userData) => {
@@ -36,11 +36,5 @@ export function AuthProvider({ children }) {
   );
 }
 
-// Custom hook to use the AuthContext
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
-  return context;
-};
+export { AuthContext, AuthProvider };
+

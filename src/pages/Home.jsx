@@ -1,6 +1,6 @@
 // src/pages/Home.js
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from"../hooks/useAuth";
 function Home() {
   const { user } = useAuth();
 

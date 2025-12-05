@@ -1,7 +1,7 @@
 // src/AuthForm.js
 import { useState } from "react";
 import "./AuthForm.css";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
 const AuthForm = () => {
   const { login } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
